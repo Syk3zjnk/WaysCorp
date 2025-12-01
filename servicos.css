@@ -2,8 +2,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: #f3f3f3;
-    color: #333;
+    background: #515151;
+    color: #ffffff;
 }
 
 /* NAVBAR */
@@ -13,7 +13,7 @@ body {
     align-items: center;
     background-color: #4ca6f5;
     padding: 15px 40px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -42,7 +42,8 @@ body {
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 0;          /* começa sem largura */
+    width: 0;
+    /* começa sem largura */
     height: 2px;
     background: white;
     transition: width 0.3s ease;
@@ -62,7 +63,7 @@ body {
     align-items: center;
     overflow: hidden;
     text-align: center;
-    color: white;
+    color: #333;
 }
 
 .hero-servicos .hero-img {
@@ -91,12 +92,14 @@ body {
     font-size: 3rem;
     margin: 0;
     font-weight: 700;
+    color: #fff;
 }
 
 .hero-servicos p {
     font-size: 1.2rem;
     opacity: 0.9;
     margin-top: 10px;
+    color: #fff;
 }
 
 /* CARDS DE SERVIÇOS */
@@ -111,10 +114,10 @@ body {
 }
 
 .card {
-    background: #ffffff;
+    background: #333;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.50);
     transition: transform 0.3s ease;
 }
 
@@ -134,12 +137,12 @@ body {
 /* SERVIÇO PRINCIPAL */
 .servico-principal {
     text-align: center;
-    background: white;
+    background: #333;
     max-width: 950px;
     margin: 60px auto;
     padding: 50px 25px;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-detalhes {
@@ -147,7 +150,7 @@ body {
     margin-top: 18px;
     padding: 12px 25px;
     background: #4ca6f5;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.3s ease;
@@ -171,26 +174,14 @@ body {
 }
 
 .detalhes-bloco {
-    background: white;
+    background: #333;
     padding: 25px;
     border-radius: 12px;
     margin-bottom: 20px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.50);
 }
 
 .detalhes-bloco h3 {
-    margin-bottom: 10px;
-}
-
-/* CONTATO FINAL */
-.contato-final {
-    background: #4ca6f5;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.contato-final h2 {
     margin-bottom: 10px;
 }
 
