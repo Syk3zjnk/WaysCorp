@@ -1,0 +1,177 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d1e1f8;
+    color: #333;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4ca6f5;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d9f0ff;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #d9f0ff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.development-banner {
+    background: url("imagens/quebra-cabecas-de-borracha-na-bagunca.jpg") no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 90px 20px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.development-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.35);
+}
+.development-banner .banner-content {
+    position: relative;
+    z-index: 1;
+}
+.development-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.development-banner p {
+    font-size: 1.2rem;
+}
+
+
+.games-section {
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+
+.games-area {
+    margin-bottom: 60px;
+}
+
+.games-area h2 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: #4ca6f5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+
+.game-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 360px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.game-card img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    filter: brightness(0.95);
+    transition: transform 0.3s ease;
+}
+
+.game-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.game-card:hover img {
+    transform: scale(1.1);
+}
+
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #4ca6f5;
+    color: #ffffff;
+    font-weight: 400;
+}
