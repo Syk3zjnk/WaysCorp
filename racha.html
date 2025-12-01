@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caça-Palavras - Ways Corp</title>
+  <link rel="stylesheet" href="racha.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Ways Corp</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="desenvolvimento.html">Desenvolvimento Infantil</a></li>
+        <li><a href="">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- INTRO -->
+  <div id="intro-caça" class="intro-container">
+    <h1>Jogo de Caça-Palavras</h1>
+
+    <p class="intro-text">
+      Este jogo de caça-palavras foi desenvolvido para estimular habilidades cognitivas fundamentais no
+      desenvolvimento infantil. A criança deve procurar palavras escondidas entre as letras do quadro.
+    </p>
+
+    <h2>Como funciona?</h2>
+    <ul class="intro-list">
+      <li>Observe a lista de palavras que devem ser encontradas.</li>
+      <li>Clique nas letras para formar a palavra.</li>
+      <li>Se formar uma palavra correta, ela será marcada!</li>
+      <li>Encontre todas para vencer o jogo.</li>
+    </ul>
+
+    <h2>Por que este jogo ajuda no desenvolvimento?</h2>
+    <ul class="intro-list">
+      <li>🧠 Melhora a atenção e concentração.</li>
+      <li>🔤 Aumenta o vocabulário.</li>
+      <li>👁️ Estimula a percepção visual.</li>
+      <li>📚 Reforça leitura e identificação de padrões.</li>
+      <li>✨ Desenvolve memória e raciocínio.</li>
+    </ul>
+
+    <button id="start-wordsearch" class="start-btn">Começar o Jogo</button>
+  </div>
+
+  <!-- JOGO -->
+  <main id="game-section" style="display:none;">
+    <section class="game-section">
+      <h1>Caça-Palavras</h1>
+      <p>Encontre todas as palavras escondidas!</p>
+
+      <div class="game-container">
+        <div id="wordsearch"></div>
+        <div id="word-list"></div>
+      </div>
+
+      <button id="restart-btn">Reiniciar</button>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="victoryModal" class="victory-modal">
+    <div class="victory-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/4144/4144606.png" alt="Criança comemorando" class="victory-img">
+      <h2>🎉 Parabéns!</h2>
+      <p>Você encontrou todas as palavras!<br>Que incrível o seu desempenho!</p>
+      <button id="playAgainBtn">Jogar Novamente</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Desenvolver+. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

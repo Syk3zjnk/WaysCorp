@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #2b2b2b; /* fundo escuro geral */
+  color: #e0e0e0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4ca6f5; /* azul original */
+  padding: 15px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #eaf4ff;
+  font-weight: 400;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== INTRO / EXPLICAÇÃO ===== */
+.intro-container {
+  max-width: 900px;
+  background: #202020; /* fundo escuro do container */
+  padding: 40px 50px;
+  margin: 50px auto;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.4s ease;
+}
+
+.intro-container h1 {
+  font-size: 2.3rem;
+  color: #4ca6f5; /* azul vibrante */
+  margin-bottom: 10px;
+}
+
+.intro-container h2 {
+  color: #6fb0ff;
+  margin-top: 25px;
+  font-size: 1.5rem;
+}
+
+.intro-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #cfd9e8; /* texto claro */
+  margin-bottom: 25px;
+}
+
+.intro-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.intro-list li {
+  background: #2a4f8d; /* azul escuro das listas */
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 10px rgba(76, 166, 245, 0.4);
+  color: #d3e3ff;
+}
+
+/* botão iniciar */
+.start-btn {
+  background-color: #4ca6f5;
+  color: #fff;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 15px rgba(76, 166, 245, 0.6);
+}
+
+.start-btn:hover {
+  background-color: #5cb6ff;
+  transform: translateY(-3px);
+}
+
+/* ===== JOGO / CAÇA-PALAVRAS ===== */
+.game-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.game-section h1 {
+  font-size: 2.2rem;
+  color: #4ca6f5; /* azul vibrante */
+  margin-bottom: 10px;
+}
+
+.game-section p {
+  color: #cfd9e8;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* Layout lado a lado */
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* ===== GRADE ===== */
+#wordsearch {
+  display: grid;
+  grid-template-columns: repeat(12, 42px);
+  gap: 5px;
+  justify-content: center;
+  background-color: #1c1c1c;
+  border: 2px solid #4ca6f5;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(76, 166, 245, 0.3);
+}
+
+.cell {
+  width: 42px;
+  height: 42px;
+  background-color: #2a2a2a;
+  border: 1px solid #4ca6f5;
+  color: #cfd9e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s ease;
+}
+
+.cell:hover {
+  background-color: #3a3a3a;
+  transform: scale(1.08);
+}
+
+.cell.selected {
+  background-color: #ffe066;
+  color: #1e2a38;
+  transform: scale(1.1);
+  font-weight: 600;
+}
+
+.cell.found {
+  background-color: #4caf50;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #4caf50a0;
+}
+
+/* ===== LISTA DE PALAVRAS ===== */
+#word-list {
+  min-width: 220px;
+  text-align: left;
+  color: #d3e3ff;
+  font-weight: 500;
+  background-color: #1c1c1c;
+  padding: 20px 25px;
+  border-radius: 12px;
+  border: 2px solid #4ca6f5;
+  box-shadow: 0 4px 10px rgba(76, 166, 245, 0.25);
+}
+
+#word-list h3 {
+  margin-top: 0;
+  color: #4ca6f5;
+  text-align: center;
+}
+
+#word-list ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#word-list li {
+  margin: 6px 0;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(76, 166, 245, 0.25);
+  transition: color 0.3s;
+}
+
+#word-list li:hover {
+  color: #4ca6f5;
+}
+
+.word-found {
+  text-decoration: line-through;
+  color: #4caf50;
+  font-weight: 600;
+}
+
+/* ===== BOTÃO ===== */
+button {
+  background-color: #4ca6f5;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 35px;
+  box-shadow: 0 4px 10px rgba(76, 166, 245, 0.25);
+}
+
+button:hover {
+  background-color: #5cb6ff;
+  transform: translateY(-2px);
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  background-color: #4ca6f5;
+  text-align: center;
+  padding: 18px 0;
+  color: #dddddd;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+
+/* ===== MODAL DE VITÓRIA ===== */
+.victory-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 42, 56, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.victory-content {
+  background: #202020;
+  border-radius: 15px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(76, 166, 245, 0.3);
+  max-width: 350px;
+  animation: popUp 0.4s ease forwards;
+}
+
+.victory-content h2 {
+  color: #4ca6f5;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.victory-content p {
+  color: #cfd9e8;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.victory-img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.victory-content button {
+  background-color: #4ca6f5;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.victory-content button:hover {
+  background-color: #5cb6ff;
+  transform: translateY(-2px);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
