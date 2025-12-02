@@ -1,100 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Desenvolvimento Infantil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="desenvolvimento.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-   
-    <header>
-        <nav class="navbar">
-            <div class="logo">EcoBag</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="desenvolvimento.html" class="active">Desenvolvimento Infantil</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <div class="logo">Ways Corp</div>
 
-    <!-- BANNER COM IMAGEM -->
-    <section class="development-banner">
-        <div class="banner-content">
-            <h1>Aprenda Brincando!</h1>
-            <p>Jogos educativos que desenvolvem habilidades cognitivas, motoras e criativas.</p>
-        </div>
-    </section>
+        <button class="navbar-toggle" aria-label="Abrir menu">
+            <span></span>
+        </button>
 
-    <main class="games-section">
-        <p class="subtitle">Escolha uma área e divirta-se enquanto aprende:</p>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="desenvolvimento.html" class="active">Desenvolvimento Infantil</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <!-- Área de Linguagem -->
-        <section class="games-area linguagem">
-            <h2>🧩 Linguagem</h2>
-            <div class="games-grid">
-                <a href="racha.html" class="game-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3126/3126647.png" alt="Caça-Palavra">
-                    <h3>Caça-Palavra</h3>
-                </a>
-                <a href="forme.html" class="game-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1027/1027012.png" alt="Forme Palavras">
-                    <h3>Forme Palavras</h3>
-                </a>
-            </div>
-        </section>
+<section class="development-banner">
+    <div class="banner-content">
+        <h1>Aprenda Brincando!</h1>
+        <p>Jogos educativos que desenvolvem habilidades cognitivas, motoras e criativas.</p>
+    </div>
+</section>
 
-        <!-- Área de Matemática -->
+<main class="games-section">
+    <p class="subtitle">Escolha uma área e divirta-se enquanto aprende:</p>
+
+    <!-- LINGUAGEM (continua como está) -->
+    <section class="games-area linguagem">
+    <h2>🧩 Linguagem</h2>
+
+    <div class="games-grid linguagem-grid">
+        <a href="racha.html" class="game-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3126/3126647.png" alt="Caça-Palavra" />
+            <h3>Caça-Palavra</h3>
+        </a>
+
+        <a href="forme.html" class="game-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1027/1027012.png" alt="Forme Palavras" />
+            <h3>Forme Palavras</h3>
+        </a>
+    </div>
+</section>
+
+    <!-- AGRUPAMENTO MATEMÁTICA + CIÊNCIAS + PIANO -->
+    <div class="group-topics">
+
         <section class="games-area matematica">
             <h2>🔢 Matemática</h2>
             <div class="games-grid">
                 <a href="#" class="game-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Somar e Subtrair">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Somar e Subtrair" />
                     <h3>Somar e Subtrair</h3>
-                </a>
-                <a href="#" class="game-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3159/3159310.png" alt="Quebra-cabeça de Números">
-                    <h3>Quebra-cabeça de Números</h3>
                 </a>
             </div>
         </section>
 
-        <!-- Área de Ciências -->
         <section class="games-area ciencias">
             <h2>🌿 Ciências</h2>
             <div class="games-grid">
                 <a href="advinhe.html" class="game-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Adivinhe o Animal">
+                    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Adivinhe o Animal" />
                     <h3>Adivinhe o Animal</h3>
                 </a>
-                <a href="#" class="game-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3502/3502745.png" alt="Corpo Humano">
-                    <h3>Corpo Humano</h3>
-                </a>
             </div>
         </section>
 
-        <!-- Área de Raciocínio -->
-        <section class="games-area raciocinio">
-            <h2>💭 Raciocínio</h2>
+        <section class="games-area piano">
+            <h2>💭 Piano</h2>
             <div class="games-grid">
-                <a href="memoria.html" class="game-card">
-                    <img src="" alt="Jogo da Memória">
-                    <h3>Jogo da Memória</h3>
-                </a>
-                <a href="#" class="game-card">
-                    <img src="" alt="Quiz Infantil">
-                    <h3>Quiz Infantil</h3>
+                <a href="piano.html" class="game-card">
+                    <img src="ICONS/icons8-piano-64.png" alt="Piano interativo" />
+                    <h3>Piano Interativo</h3>
                 </a>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <p>© 2025 Desenvolver+. Todos os direitos reservados.</p>
-    </footer>
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 Desenvolver+. Todos os direitos reservados.</p>
+</footer>
+
+<script src="desenvolvimento.js"></script>
+
 </body>
 </html>
