@@ -7,6 +7,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.btn{
+    display: none;
 body {
     background-color: #d1e1f8;
     color: #333;
@@ -378,4 +380,5 @@ footer {
         justify-content: center;
     }
 }
+
 
