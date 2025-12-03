@@ -254,9 +254,9 @@ footer {
         top: 0;
         right: 0;
         width: 60%;
-        max-width: 320px;
+        max-width: 320px%;
         height: 100%;
-        background: rgba(38, 53, 72, 0.9);
+        background: #26354863;
         box-shadow: -4px 0 22px rgba(18, 26, 50, 0.38);
         border-radius: 26px 0 0 26px;
         z-index: 99;
@@ -283,9 +283,9 @@ footer {
     }
 
     .navbar-menu-mobile a:hover {
-        background: #313e53cb;
-        color: #498496;
-    }
+    background: #313e53;
+    color: #ffa500;
+  }
 
     .menu-backdrop {
         display: block;
@@ -358,3 +358,4 @@ footer {
         justify-content: center;
     }
 }
+
