@@ -32,6 +32,7 @@ body {
     color: #ffffff;
 }
 
+/* links desktop */
 .nav-links {
     list-style: none;
     display: flex;
@@ -47,7 +48,6 @@ body {
     padding-bottom: 5px;
     transition: color 0.3s ease;
 }
-
 
 .nav-links a::after {
     content: '';
@@ -70,8 +70,7 @@ body {
     width: 0;
 }
 
-
-
+/* BANNER DESENVOLVIMENTO */
 .development-banner {
     background: url("imagens/quebra-cabecas-de-borracha-na-bagunca.jpg") no-repeat center center;
     background-size: cover;
@@ -107,6 +106,7 @@ body {
     font-size: 1.2rem;
 }
 
+/* SEÇÕES DE JOGOS */
 .games-section {
     padding: 60px 40px;
     text-align: center;
@@ -142,9 +142,8 @@ body {
 
 /* Aproxima os dois cards da seção Linguagem */
 .linguagem-grid {
-    gap: 10px !important; /* aproxima sem afetar outras áreas */
+    gap: 10px !important;
 }
-
 
 .game-card {
     background-color: #ffffff;
@@ -185,6 +184,7 @@ body {
     transform: scale(1.1);
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 25px;
@@ -193,17 +193,18 @@ footer {
     font-weight: 400;
 }
 
-/* === MENU RESPONSIVO === */
+/* === MENU RESPONSIVO / BOTÃO HAMBÚRGUER === */
 .navbar-toggle {
     background: transparent;
     border: none;
     cursor: pointer;
-    display: none;
+    display: none;           /* aparece só no mobile via media */
     padding: 6px;
     position: relative;
     z-index: 20;
 }
 
+/* Barrinhas do hamburguer */
 .navbar-toggle::before,
 .navbar-toggle::after,
 .navbar-toggle span {
@@ -220,10 +221,9 @@ footer {
 
 .navbar-toggle span {
     margin: 5px 0;
-    position: relative;
-    z-index: 20;
 }
 
+/* Animação em X quando aberto */
 .navbar-toggle.open::before {
     transform: translateY(8px) rotate(45deg);
 }
@@ -236,62 +236,68 @@ footer {
     opacity: 0;
 }
 
-/* ===== MENU MOBILE ===== */
+/* ===== MENU MOBILE (telefone em pé e deitado) ===== */
 @media (max-width: 500px), (max-height: 500px) and (orientation: landscape) {
-.nav-links { display: none; }
 
-.navbar-toggle { display: block; }
+    .nav-links {
+        display: none;
+    }
 
-.navbar-menu-mobile {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 60%;
-    max-width: 320px;
-    height: 100%;
-    background: rgba(38, 53, 72, 0.9);
-    box-shadow: -4px 0 22px rgba(18, 26, 50, 0.38);
-    border-radius: 26px 0 0 26px;
-    z-index: 99;
-    align-items: center;
-    justify-content: center;
-    animation: menuSlideInRight 0.33s cubic-bezier(.71, 1.56, .43, .9);
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-menu-mobile {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+        max-width: 320px;
+        height: 100%;
+        background: rgba(38, 53, 72, 0.9);
+        box-shadow: -4px 0 22px rgba(18, 26, 50, 0.38);
+        border-radius: 26px 0 0 26px;
+        z-index: 99;
+        align-items: center;
+        justify-content: center;
+        animation: menuSlideInRight 0.33s cubic-bezier(.71, 1.56, .43, .9);
+    }
+
+    .navbar-menu-mobile li {
+        margin: 1.3em 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-menu-mobile a {
+        font-size: 1.15em;
+        font-weight: 500;
+        color: #e0e6ed;
+        text-decoration: none;
+        padding: 8px 18px;
+        border-radius: 8px;
+        max-width: 80%;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    .navbar-menu-mobile a:hover {
+        background: #313e53cb;
+        color: #498496;
+    }
+
+    .menu-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 98;
+        animation: fadeIn 0.3s;
+    }
 }
 
-.navbar-menu-mobile li {
-    margin: 1.3em 0;
-    width: 100%;
-    text-align: center;
-}
-
-.navbar-menu-mobile a {
-    font-size: 1.15em;
-    font-weight: 500;
-    color: #e0e6ed;
-    text-decoration: none;
-    padding: 8px 18px;
-    border-radius: 8px;
-    max-width: 80%;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.navbar-menu-mobile a:hover {
-    background: #313e53cb;
-    color: #498496;
-}
-
-.menu-backdrop {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 98;
-    animation: fadeIn 0.3s;
-}
-}
-
+/* Animações do menu */
 @keyframes menuSlideInRight {
     from { transform: translateX(100%); }
     to   { transform: translateX(0); }
@@ -326,7 +332,6 @@ footer {
 /* Para celular deitado (paisagem) */
 @media (max-height: 500px) and (orientation: landscape) {
 
-    /* O grupo não deve ficar lado a lado */
     .group-topics {
         display: flex;
         flex-wrap: wrap;
@@ -334,51 +339,22 @@ footer {
         gap: 20px;
     }
 
-    /* Matemática e Ciências ficam 45% cada */
     .group-topics .games-area {
         width: 45%;
     }
 
-    /* Piano fica sozinho na linha, centralizado */
     .group-topics .piano {
         width: 100%;
         display: flex;
-        justify-content: center;
-    }
-}
-@media (max-height: 500px) and (orientation: landscape) {
-
-    /* O grupo não deve ficar lado a lado */
-    .group-topics {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
     }
 
-    /* Matemática e Ciências ficam 45% cada */
-    .group-topics .games-area {
-        width: 45%;
-    }
-
-    /* Piano fica 100% largura, com título em cima e card centralizado */
-    .group-topics .piano {
-        width: 100%;
-        display: flex;
-        flex-direction: column; /* empilha título e card verticalmente */
-        align-items: center;    /* centraliza horizontalmente */
-        text-align: center;     /* centraliza texto do título */
-        gap: 15px;              /* espaço entre título e card */
-    }
-
-    /* Centralizar o card dentro da seção piano */
     .group-topics .piano .games-grid {
         width: auto;
         display: flex;
         justify-content: center;
     }
 }
-
-
-
-
