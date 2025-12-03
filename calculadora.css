@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ===== CONFIGURAÇÃO GERAL ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #1d1f23;
+    color: #ffffff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #63aaff;
+    padding: 15px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    padding-bottom: 5px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d6eaff;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #d6eaff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===== CONTAINER GERAL ===== */
+.container,
+.intro-container {
+   max-width: 900px;
+  background: #202020; /* fundo escuro do container */
+  padding: 40px 50px;
+  margin: 50px auto;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.4s ease;
+}
+
+/* ===== TÍTULOS ===== */
+h1, h2 {
+    color: #63aaff;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.7rem;
+    margin-top: 30px;
+}
+
+/* ===== TEXTO DE EXPLICAÇÃO ===== */
+.descricao,
+.intro-text {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+    font-size: 1.15rem;
+    color: #d7eaff;
+}
+
+/* ===== LISTAS DE EXPLICAÇÃO ===== */
+.lista-explicacao,
+.intro-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.lista-explicacao li,
+.intro-list li {
+   background: #2a4f8d; /* azul escuro das listas */
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #d3e3ff;
+}
+
+/* ===== BOTÃO PADRÃO ===== */
+.btn,
+.start-btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: #63aaff;
+    padding: 14px 35px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: none;
+    color: #000;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 6px 15px rgba(99, 170, 255, 0.5);
+}
+
+.btn:hover,
+.start-btn:hover {
+    background: #79bbff;
+    transform: translateY(-3px);
+}
