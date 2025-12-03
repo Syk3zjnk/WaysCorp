@@ -216,7 +216,6 @@ footer {
     transition: transform 0.25s ease, opacity 0.25s ease;
     position: relative;
     z-index: 20;
-    display: none;
 }
 
 .navbar-toggle span {
@@ -379,6 +378,7 @@ footer {
         justify-content: center;
     }
 }
+
 
 
 
