@@ -267,8 +267,14 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- MOBILE: telefone em pé e deitado até 500px --- */
+/* --- MOBILE: telefone em pé --- */
 @media (max-width: 500px) {
+
+  body {
+    min-height: 100vh;
+    background-size: cover;        /* cobre a tela em pé */
+    background-position: center top;
+  }
 
   .nav-links {
     display: none;
@@ -316,7 +322,15 @@ footer {
     padding: 3% 0;
   }
 }
+
+/* --- MOBILE: telefone deitado --- */
 @media (max-height: 500px) and (orientation: landscape) {
+
+  body {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
+  }
 
   .nav-links {
     display: none;
@@ -369,4 +383,3 @@ footer {
     padding: 2.5% 0;
   }
 }
-
