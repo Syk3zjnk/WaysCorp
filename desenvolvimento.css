@@ -284,7 +284,7 @@ footer {
 
     .navbar-menu-mobile a:hover {
     background: #313e53;
-    color: #ffa500;
+    color: #fff;
   }
 
     .menu-backdrop {
@@ -358,4 +358,5 @@ footer {
         justify-content: center;
     }
 }
+
 
