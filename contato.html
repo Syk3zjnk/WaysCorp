@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <link rel="stylesheet" href="contato.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+  <link rel="stylesheet" href="contato.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Ways Corp</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="desenvolvimento.html">Desenvolvimento Infantil</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Ways Corp</div>
 
-    <section class="contact-section">
-        <h1>Entre em Contato</h1>
-        <p class="intro">
-            Tem alguma dúvida, sugestão ou quer falar com a nossa equipe?<br>
-            Preencha o formulário abaixo ou utilize um dos nossos canais de atendimento.<br>
-            Será um prazer conversar com você!
+      <!-- Botão hambúrguer -->
+      <button class="navbar-toggle" aria-label="Abrir menu">
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="desenvolvimento.html">Desenvolvimento Infantil</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <h1>Entre em Contato</h1>
+    <p class="intro">
+      Tem alguma dúvida, sugestão ou quer falar com a nossa equipe?<br>
+      Preencha o formulário abaixo ou utilize um dos nossos canais de atendimento.<br>
+      Será um prazer conversar com você!
+    </p>
+
+    <div class="contact-container">
+
+      <!-- FORMULÁRIO -->
+      <form class="contact-form">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem..." required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <!-- INFORMAÇÕES DE CONTATO -->
+      <div class="contact-info">
+        <h2>Informações de Contato</h2>
+
+        <p class="info-text">
+          Tem alguma dúvida, sugestão ou quer falar com a nossa equipe?<br>
+          Preencha o formulário ao lado ou utilize um dos nossos canais de atendimento.<br>
+          Será um prazer conversar com você!
         </p>
 
-        <div class="contact-container">
+        <p><strong>Endereço:</strong> Avenida Pres. Trancredo de Almeida, 215 - Vila Kennedy, Baixo Guandu, Espírito Santo/ES</p>
+        <p><strong>Telefone/WhatsApp:</strong> (27) 99715-8616</p>
+        <p><strong>E-mail:</strong> entreemcontato@ways.com</p>
+        <p><strong>Horário de atendimento:</strong> Segunda a sexta, das 9h às 18h</p>
 
-            <!-- FORMULÁRIO -->
-            <form class="contact-form">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>
+        <div class="social">
+          <h3>Você também pode nos encontrar nas redes sociais:</h3>
 
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Digite seu e-mail" required>
-
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem..." required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
-
-            <!-- INFORMAÇÕES DE CONTATO -->
-            <div class="contact-info">
-                <h2>Informações de Contato</h2>
-
-                <p class="info-text">
-                    Tem alguma dúvida, sugestão ou quer falar com a nossa equipe?<br>
-                    Preencha o formulário ao lado ou utilize um dos nossos canais de atendimento.<br>
-                    Será um prazer conversar com você!
-                </p>
-
-                <p><strong>Endereço:</strong> Avenida Pres. Trancredo de Almeida, 215 - Vila Kennedy, Baixo Guandu, Espírito Santo/ES</p>
-                <p><strong>Telefone/WhatsApp:</strong> (27) 99715-8616</p>
-                <p><strong>E-mail:</strong> entreemcontato@ways.com</p>
-                <p><strong>Horário de atendimento:</strong> Segunda a sexta, das 9h às 18h</p>
-
-                <div class="social">
-                    <h3>Você também pode nos encontrar nas redes sociais:</h3>
-
-                    <div class="social-icons">
-
-                        <!-- Instagram -->
-                        <a href="https://instagram.com/fintec_2025" target="_blank">
-                            <img src="imagens/instagram.png" alt="Instagram" class="insta-logo">
-                            <span>@Ways.corp</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+          <div class="social-icons">
+            <!-- Instagram -->
+            <a href="https://instagram.com/fintec_2025" target="_blank">
+              <img src="imagens/instagram.png" alt="Instagram" class="insta-logo">
+              <span>@Ways.corp</span>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <footer>
-        <p>© 2025 Ways Corp Todos os direitos reservados.</p>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Ways Corp Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="contato.js"></script>
 </body>
 </html>
-
