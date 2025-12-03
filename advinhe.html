@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o Animal - Ways Corp</title>
+    <link rel="stylesheet" href="advinhe.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ways Corp</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Desenvolvimento Infantil</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="animal-game">
+        <div class="game-card">
+            <div class="curiosity-label">
+                Curiosidade
+                <span class="arrow"></span>
+            </div>
+            <div class="lamp-container">
+                <img src="lamp.png" class="lamp" id="lamp">
+            </div>
+
+            <h2 class="game-title">Qual é o animal?</h2>
+
+            <div class="slide-wrapper">
+                <div class="slide-area" id="slide-area">
+
+                    <!-- FOTO + INPUT -->
+                    <div class="animal-box">
+                        <img src="koala.png" alt="Animal" id="animal-img" class="animal-img">
+
+                        <div class="input-area">
+                            <input type="text" id="answer" placeholder="Qual nome desse animal?" autocomplete="off">
+                            <button id="verifyBtn">Verificar</button>
+                        </div>
+
+                        <p id="result"></p>
+                    </div>
+
+                    <!-- CURIOSIDADE -->
+                    <div class="curiosity-box" id="curiosity-panel">
+                        <h1 class="curiosity-title">CURIOSIDADE SOBRE ESSE ANIMAL</h1>
+                        <p id="curiosity-text"></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Ways Corp. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="advinhe.js"></script>
+</body>
+
+</html>
