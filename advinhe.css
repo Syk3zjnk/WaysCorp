@@ -174,10 +174,16 @@ body {
 }
 
 input::placeholder {
-    color: #b8b8b8;
-    font-size: 1rem;
+    color: #cccccc;
+    font-style: italic;
+    opacity: 1;
+    letter-spacing: 0.3px;
+    transition: 0.3s ease;
 }
-
+input:focus::placeholder {
+    color: #999999;
+    transform: translateX(3px);
+}
 /* BOTÃO */
 .input-area button {
     background-color: #4ca6f5;
