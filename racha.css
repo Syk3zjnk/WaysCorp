@@ -1,47 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {
-  font-family: 'Poppins', sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #2b2b2b; /* fundo escuro geral */
-  color: #e0e0e0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* ===== NAVBAR ===== */
+body {
+  background-color: #2b2b2b;
+  color: #e0e0e0;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* garante que o conteúdo empurre o footer */
+main {
+  flex: 0 0 auto;
+}
+
+footer {
+  margin-top: auto;   /* cola o footer no fundo da tela */
+}
+
+/* ===== NAVBAR (igual ao da Home) ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4ca6f5; /* azul original */
+  text-align: center;
+  background-color: #4ca6f5;
   padding: 15px 40px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #ffffff;
-  letter-spacing: 0.5px;
 }
 
+/* Botão hambúrguer bonito */
+.navbar-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+  /* aparece só no mobile via media */
+  padding: 1px;
+}
+
+/* Barras (duas em ::before/::after + uma no span) */
+.navbar-toggle::before,
+.navbar-toggle::after,
+.navbar-toggle span {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s;
+}
+
+.navbar-toggle span {
+  margin: 5px 0;
+}
+
+/* Animação para "X" quando aberto */
+.navbar-toggle.open::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.open::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar-toggle.open span {
+  opacity: 0;
+}
+
+/* Links desktop */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
+  margin: 0;
 }
 
 .nav-links a {
   position: relative;
   text-decoration: none;
-  color: #eaf4ff;
+  color: #ffffff;
   font-weight: 400;
   padding-bottom: 5px;
   transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ffffff;
 }
 
 .nav-links a::after {
@@ -51,8 +107,12 @@ body {
   height: 2px;
   left: 0;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: #cce6ff;
   transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #cce6ff;
 }
 
 .nav-links a:hover::after {
@@ -62,7 +122,7 @@ body {
 /* ===== INTRO / EXPLICAÇÃO ===== */
 .intro-container {
   max-width: 900px;
-  background: #202020; /* fundo escuro do container */
+  background: #202020;
   padding: 40px 50px;
   margin: 50px auto;
   border-radius: 25px;
@@ -73,7 +133,7 @@ body {
 
 .intro-container h1 {
   font-size: 2.3rem;
-  color: #4ca6f5; /* azul vibrante */
+  color: #4ca6f5;
   margin-bottom: 10px;
 }
 
@@ -86,7 +146,7 @@ body {
 .intro-text {
   font-size: 1.15rem;
   line-height: 1.7;
-  color: #cfd9e8; /* texto claro */
+  color: #cfd9e8;
   margin-bottom: 25px;
 }
 
@@ -97,7 +157,7 @@ body {
 }
 
 .intro-list li {
-  background: #2a4f8d; /* azul escuro das listas */
+  background: #2a4f8d;
   padding: 12px 15px;
   border-radius: 12px;
   margin-bottom: 10px;
@@ -126,6 +186,8 @@ body {
   transform: translateY(-3px);
 }
 
+/* ===== MENSAGEM DE ORIENTAÇÃO ===== */
+
 /* ===== JOGO / CAÇA-PALAVRAS ===== */
 .game-section {
   text-align: center;
@@ -134,7 +196,7 @@ body {
 
 .game-section h1 {
   font-size: 2.2rem;
-  color: #4ca6f5; /* azul vibrante */
+  color: #4ca6f5;
   margin-bottom: 10px;
 }
 
@@ -243,7 +305,7 @@ body {
   font-weight: 600;
 }
 
-/* ===== BOTÃO ===== */
+/* ===== BOTÃO GERAL ===== */
 button {
   background-color: #4ca6f5;
   color: #fff;
@@ -338,6 +400,7 @@ footer {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -349,8 +412,120 @@ footer {
     transform: scale(0.7);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+@media (max-width: 500px),
+(max-height: 500px) and (orientation: landscape) {
+
+  /* ...seu código existente... */
+
+  .orientation-message {
+    display: flex;
+    justify-content: center;          /* centro horizontal */
+    align-items: center;              /* centro vertical */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    min-height: calc(100vh - 120px);  /* tela cheia menos header+footer (ajuste se preciso) */
+  }
+}
+
+/* --- Mobile: telefone em pé e deitado (até 500px) --- */
+@media (max-width: 500px),
+(max-height: 500px) and (orientation: landscape) {
+  .intro-container {
+    margin: 25px 10px;
+    padding: 25px 18px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Menu drawer lateral, abre pela direita */
+  .navbar-menu-mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    max-width: 320px;
+    height: 100%;
+    background: #26354863;
+    box-shadow: -4px 0 22px #121a3260;
+    border-radius: 26px 0 0 26px;
+    z-index: 99;
+    align-items: center;
+    justify-content: center;
+    animation: menuSlideInRight .33s cubic-bezier(.71, 1.56, .43, .9);
+  }
+
+  .navbar-menu-mobile li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.3em 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-menu-mobile a {
+    display: inline-block;
+    font-size: 1.15em;
+    font-weight: 500;
+    color: #e0e6ed;
+    text-decoration: none;
+    letter-spacing: .07em;
+    text-align: center;
+    max-width: 80%;
+    white-space: normal;
+    word-break: break-word;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .navbar-menu-mobile a:hover {
+    background: #313e53cb;
+    color: #498496;
+}
+
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 98;
+    animation: fadeIn .3s;
+  }
+
+  @keyframes menuSlideInRight {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 }
