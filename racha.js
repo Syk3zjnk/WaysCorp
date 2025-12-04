@@ -10,22 +10,14 @@ const wordListContainer = document.getElementById("word-list");
 const restartButton = document.getElementById("restart-btn");
 
 const startBtn = document.getElementById("start-wordsearch");
-const intro = document.getElementById("intro-caça");
+const intro = document.getElementById("intro-caca") || document.getElementById("intro-caça");
 const gameSection = document.getElementById("game-section");
+const orientationMessage = document.getElementById("orientation-message");
 
 let palavras = [];
 let selectedCells = [];
 let foundWords = [];
 let grid = [];
-
-/* --- INÍCIO DO JOGO --- */
-startBtn.addEventListener("click", () => {
-  intro.style.display = "none";
-  gameSection.style.display = "block";
-  generateGrid();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
 
 /* --- SORTEIA PALAVRAS --- */
 function sortearPalavras() {
@@ -210,4 +202,85 @@ function checkVictory() {
       showVictoryModal();
     }, 300);
   }
+}
+
+/* ===== ORIENTAÇÃO: mostrar jogo só em horizontal ===== */
+function isPortrait() {
+  return window.innerHeight >= window.innerWidth; // retrato se altura >= largura [web:19]
+}
+
+function atualizarVisibilidadeJogo() {
+  if (!gameSection) return;
+  if (gameSection.style.display === "none" && intro && intro.style.display !== "none") return;
+
+  if (isPortrait()) {
+    gameSection.style.display = "none";
+    if (orientationMessage) orientationMessage.style.display = "block";
+  } else {
+    gameSection.style.display = "block";
+    if (orientationMessage) orientationMessage.style.display = "none";
+  }
+}
+
+/* --- INÍCIO DO JOGO (com checagem de orientação) --- */
+if (startBtn) {
+  startBtn.addEventListener("click", () => {
+    if (intro) intro.style.display = "none";
+
+    if (isPortrait()) {
+      if (gameSection) gameSection.style.display = "none";
+      if (orientationMessage) orientationMessage.style.display = "block";
+    } else {
+      if (gameSection) gameSection.style.display = "block";
+      if (orientationMessage) orientationMessage.style.display = "none";
+      generateGrid();
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+/* escutar mudança de orientação / resize */
+window.addEventListener("resize", atualizarVisibilidadeJogo);
+window.addEventListener("orientationchange", atualizarVisibilidadeJogo);
+
+/* ===== MENU HAMBÚRGUER (igual ao da Home) ===== */
+const toggle = document.querySelector('.navbar-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (toggle && navLinks) {
+  toggle.addEventListener('click', () => {
+    // animação botão (vira X)
+    toggle.classList.toggle('open');
+
+    // Remove menus/backdrops existentes
+    document.querySelectorAll('.navbar-menu-mobile, .menu-backdrop')
+      .forEach(e => e.remove());
+
+    // Se abriu, cria menu + backdrop
+    if (toggle.classList.contains('open')) {
+      const menu = document.createElement('ul');
+      menu.className = 'navbar-menu-mobile';
+      menu.innerHTML = navLinks.innerHTML;
+      document.body.appendChild(menu);
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'menu-backdrop';
+      backdrop.onclick = () => {
+        menu.remove();
+        backdrop.remove();
+        toggle.classList.remove('open');
+      };
+      document.body.appendChild(backdrop);
+
+      // Fecha ao clicar em qualquer link
+      menu.querySelectorAll('a').forEach(link => {
+        link.onclick = () => {
+          menu.remove();
+          backdrop.remove();
+          toggle.classList.remove('open');
+        };
+      });
+    }
+  });
 }
