@@ -116,7 +116,7 @@ body {
 
 .subtitle {
     font-size: 1.3rem;
-    color: #333;
+    color: white;
     margin-bottom: 40px;
     font-weight: 500;
 }
@@ -378,6 +378,7 @@ footer {
         justify-content: center;
     }
 }
+
 
 
 
