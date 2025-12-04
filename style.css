@@ -256,8 +256,8 @@ footer p {
   }
 
   .navbar-menu-mobile a:hover {
-    background: #313e53;
-    color: #ffa500;
+        background: #313e53c2;
+        color: #498496;
   }
 
   .menu-backdrop {
