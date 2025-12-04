@@ -22,7 +22,7 @@ const curiosityText = document.getElementById("curiosity-text");
 
 const lamp = document.getElementById("lamp");
 
-// Cria a div de mensagem final
+// Mensagem final
 const gameMessage = document.createElement("div");
 gameMessage.id = "game-message";
 gameMessage.style.display = "none";
@@ -41,11 +41,13 @@ gameMessage.style.zIndex = "20";
 
 document.querySelector(".game-card").appendChild(gameMessage);
 
+// Lamp toggle
 lamp.addEventListener("click", () => {
     slideArea.classList.toggle("open");
     curiosityPanel.classList.toggle("open");
 });
 
+// Load animal
 function loadAnimal() {
     img.src = animals[current].img;
     curiosityText.textContent = animals[current].curiosity;
@@ -55,6 +57,7 @@ function loadAnimal() {
     answer.value = "";
 }
 
+// Verificar resposta
 verifyBtn.addEventListener("click", () => {
     const userAnswer = answer.value.toLowerCase().trim();
 
@@ -65,7 +68,6 @@ verifyBtn.addEventListener("click", () => {
         setTimeout(() => {
             current++;
 
-            // Se acabou a lista de animais
             if (current >= animals.length) {
                 gameMessage.style.display = "block";
             } else {
@@ -80,4 +82,13 @@ verifyBtn.addEventListener("click", () => {
     }
 });
 
-loadAnimal();
+// Botão iniciar
+const startBtn = document.getElementById("start-wordsearch");
+const intro = document.getElementById("intro");
+const gameSection = document.getElementById("gameSection");
+
+startBtn.addEventListener("click", () => {
+    intro.style.display = "none";
+    gameSection.style.display = "flex";
+    loadAnimal();
+});
