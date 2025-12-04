@@ -184,6 +184,17 @@ input:focus::placeholder {
     color: #999999;
     transform: translateX(3px);
 }
+input[type="text"] {
+    padding: 18px 16px;   /* ← deixa o placeholder mais alto */
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: #2e2e2e;
+    color: #fff;
+    width: 250px;
+}
+
 /* BOTÃO */
 .input-area button {
     background-color: #4ca6f5;
