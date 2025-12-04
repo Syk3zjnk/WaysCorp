@@ -1,9 +1,9 @@
-/* ====== BASE FINTEC ====== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #d1e1f8;
+  background-color: #515151;
   color: #f0f4f8;
 }
 
@@ -80,7 +80,7 @@ body {
 .memory-card {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: #2e4a62;
+  background-color: #333;
   border-radius: 10px;
   transform-style: preserve-3d;
   transition: transform 0.5s;
@@ -114,12 +114,12 @@ body {
 
 /* Verso (cor FINTEC) */
 .back-face {
-  background: #4a77a8;
+  background: #333;
 }
 
 /* Botão */
 button {
-  background-color: #4a77a8;
+  background-color: #333;
   color: #fff;
   border: none;
   padding: 10px 25px;
@@ -130,7 +130,7 @@ button {
 }
 
 button:hover {
-  background-color: #5e8fc5;
+  background-color: #414141;
 }
 
 /* Rodapé */
