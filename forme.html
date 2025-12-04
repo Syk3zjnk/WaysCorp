@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,29 +8,54 @@
   <link rel="stylesheet" href="forme.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  
   <nav class="navbar">
     <div class="logo">Ways</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="#">Desenvolvimento</a></li>
+      <li><a href="#">Desenvolvimento Infantil</a></li>
       <li><a href="#">Serviços</a></li>
       <li><a href="#">Contato</a></li>
     </ul>
   </nav>
 
-  
-  <div class="clouds"></div>
+  <!-- INTRO -->
+  <div id="intro-container" class="intro-container">
+    <h1>Jogo: Forme a Palavra</h1>
 
-  
+    <p class="intro-text">
+      Este jogo foi desenvolvido para estimular habilidades cognitivas fundamentais no
+      desenvolvimento infantil. A criança deve observar as letras embaralhadas e montar
+      corretamente a palavra correspondente.
+    </p>
+
+    <h2>Como funciona?</h2>
+    <ul class="intro-list">
+      <li>Observe a imagem exibida na tela.</li>
+      <li>Clique nas letras embaralhadas para montar a palavra correta.</li>
+      <li>Se formar a palavra certa, ela será confirmada!</li>
+      <li>Complete todas as palavras para vencer o jogo.</li>
+    </ul>
+
+    <h2>Por que este jogo ajuda no desenvolvimento?</h2>
+    <ul class="intro-list">
+      <li>🧠 Melhora a atenção e concentração.</li>
+      <li>🔤 Aumenta o vocabulário.</li>
+      <li>👁️ Estimula a percepção visual.</li>
+      <li>📚 Reforça leitura e identificação de padrões.</li>
+      <li>✨ Desenvolve memória e raciocínio lógico.</li>
+    </ul>
+
+    <button id="start-btn" class="start-btn">Começar o Jogo</button>
+  </div>
+
+  <!-- JOGO -->
   <section class="game-section">
     <div class="game-container">
       <div class="image-container">
         <img id="word-image" src="" alt="Imagem ilustrativa" />
       </div>
-      
-
       <div class="game-content">
         <h2 id="instruction">Forme a palavra:</h2>
         <div id="scrambled" class="scrambled"></div>
@@ -40,11 +66,11 @@
     </div>
   </section>
 
-  
   <footer>
     © 2025 Ways — Todos os direitos reservados.
   </footer>
 
   <script src="forme.js"></script>
 </body>
+
 </html>
