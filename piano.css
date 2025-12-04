@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #1e2a38;
+  background-color: #515151;
   color: #f0f4f8;
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2e4a62;
+  background-color: #4ca6f5;
   padding: 15px 40px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   position: relative;
@@ -244,7 +244,7 @@ body {
   text-align: center;
   font-size: 1.06em;
   margin: 0.8em auto 1.4em auto;
-  color: #b8d3fa;
+  color: #ffffff;
   font-weight: 400;
   max-width: 95vw;
 }
@@ -255,13 +255,13 @@ body {
   font-size: 1em;
   color: #ffeb3b;
   padding: 0.3em 0.7em;
-  background: #233266cf;
+  background: #333;
   border-radius: 0.6em;
 }
 #orientation-hint {
   margin: 0.6em auto 0 auto;
   text-align: center;
-  color: #318ce7;
+  color: #ffffff;
   font-size: .99em;
   padding: 0.3em 0.9em;
   display: block;
@@ -269,7 +269,7 @@ body {
 }
 
 .piano {
-    background: #223246;
+    background: #444;
     width: 1000px;
     height: 400px;
     margin: 100px auto 0;
@@ -322,7 +322,7 @@ body {
 .piano__keys {
     width: 100%;
     height: 300px;
-    background: #1a2430;
+    background: #131313;
     border-radius: 15px;
     padding: 30px 40px;
     display: flex;
@@ -392,8 +392,8 @@ body {
 .site-footer {
   width: 100%;
   text-align: center;
-  background-color: #2e4a62;
-  color: #b8d3fa;
+  background-color: #4ca6f5;
+  color: #ffffff;
   padding: 2.5em 0 1.5em 0;
   font-size: 1.06em;
   box-shadow: 0 -3px 19px #23326625;
