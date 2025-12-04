@@ -1,3 +1,14 @@
+// ======= MENSAGEM INICIAL =======
+const startBtn = document.getElementById('start-btn');
+const introContainer = document.getElementById('intro-container');
+const gameSection = document.querySelector('main .game-section');
+
+startBtn.addEventListener('click', () => {
+  introContainer.classList.add('hidden');   // esconde a mensagem
+  gameSection.classList.remove('hidden');   // mostra o jogo
+});
+
+// ======= JOGO DA MEMÓRIA =======
 const emojis = ['🍎','🍌','🍇','🍓','🍉','🍒','🍋','🥝'];
 let cardsArray = [...emojis, ...emojis];
 let firstCard, secondCard;
@@ -87,4 +98,5 @@ restartBtn.addEventListener('click', () => {
   createBoard();
 });
 
+// Inicializa o jogo (mas ele começa escondido até clicar no botão)
 createBoard();
