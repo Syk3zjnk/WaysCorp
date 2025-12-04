@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adivinhe o Animal - Ways Corp</title>
+    <title>Advinhe o Animal - Ways Corp</title>
     <link rel="stylesheet" href="advinhe.css">
 </head>
 
@@ -22,12 +22,50 @@
         </nav>
     </header>
 
-    <div class="animal-game">
+    <!-- INTRODUÇÃO -->
+    <div id="intro" class="intro-container">
+        <h1>Jogo: Advinhe o Animal</h1>
+
+        <p class="intro-text">
+            O jogo “Advinhe o Animal” foi desenvolvido para estimular habilidades cognitivas e perceptivas em crianças. 
+            A criança deve observar a imagem do animal, digitar o nome correto e descobrir curiosidades sobre ele.
+        </p>
+
+        <h2>Como funciona?</h2>
+        <ul class="intro-list">
+            <li>Observe atentamente a imagem do animal exibido.</li>
+            <li>Digite o nome do animal no campo indicado.</li>
+            <li>Clique em “Verificar” para ver se acertou.</li>
+            <li>Clicando na lâmpada no canto superior direito. Será revelada uma curiosidade sobre o animal.</li>
+            <li>Continue até descobrir todos os animais do jogo.</li>
+        </ul>
+
+        <h2>Por que este jogo ajuda no desenvolvimento?</h2>
+        <ul class="intro-list">
+            <li>🧠 Estimula atenção e concentração.</li>
+            <li>🔤 Amplia vocabulário e aprendizado de leitura.</li>
+            <li>👁️ Desenvolve percepção visual e reconhecimento de padrões.</li>
+            <li>✨ Incentiva curiosidade e descoberta sobre a natureza.</li>
+            <li>💡 Promove raciocínio e memória ao associar imagem, nome e curiosidade.</li>
+        </ul>
+
+        <h2>Por que foi desenvolvido?</h2>
+        <ul class="intro-list">
+            <li>Para tornar o aprendizado lúdico e interativo.</li>
+            <li>Para despertar interesse das crianças pela fauna e pelo mundo natural.</li>
+            <li>Para apoiar educadores e pais no desenvolvimento cognitivo infantil de forma divertida.</li>
+        </ul>
+
+        <button id="start-wordsearch" class="start-btn">Começar o Jogo</button>
+    </div>
+
+    <!-- JOGO -->
+    <div id="gameSection" class="animal-game" style="display: none;">
         <div class="game-card">
 
-            <!-- Lâmpada ajustada -->
+            <!-- LÂMPADA -->
             <div class="lamp-container">
-                <img src="lampada.png" class="lamp" id="lamp">
+                <img src="ImgAdivinhe/lampada.png" class="lamp" id="lamp">
             </div>
 
             <h2 class="game-title">Qual é o animal?</h2>
