@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jogo da Memória - FINTEC</title>
-  <link rel="stylesheet" href="memoria.css">
+  <link rel="stylesheet" href="memoria.css" />
 </head>
 <body>
   <header>
@@ -19,8 +19,37 @@
     </nav>
   </header>
 
+  <div id="intro-container" class="intro-container">
+    <h1>Jogo: Jogo da Memória</h1>
+
+    <p class="intro-text">
+      Este jogo foi desenvolvido para estimular habilidades cognitivas fundamentais no
+      desenvolvimento infantil. A criança deve observar as letras embaralhadas e montar
+      corretamente a palavra correspondente.
+    </p>
+
+    <h2>Como funciona?</h2>
+    <ul class="intro-list">
+      <li>Observe a imagem exibida na tela.</li>
+      <li>Clique nas letras embaralhadas para montar a palavra correta.</li>
+      <li>Se formar a palavra certa, ela será confirmada!</li>
+      <li>Complete todas as palavras para vencer o jogo.</li>
+    </ul>
+
+    <h2>Por que este jogo ajuda no desenvolvimento?</h2>
+    <ul class="intro-list">
+      <li>🧠 Melhora a atenção e concentração.</li>
+      <li>🔤 Aumenta o vocabulário.</li>
+      <li>👁️ Estimula a percepção visual.</li>
+      <li>📚 Reforça leitura e identificação de padrões.</li>
+      <li>✨ Desenvolve memória e raciocínio lógico.</li>
+    </ul>
+
+    <button id="start-btn" class="start-btn">Começar o Jogo</button>
+  </div>
+
   <main>
-    <section class="game-section">
+    <section class="game-section hidden">
       <h1>Jogo da Memória</h1>
       <p>Encontre todos os pares iguais!</p>
 
