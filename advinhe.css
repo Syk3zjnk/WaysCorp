@@ -55,6 +55,72 @@ body {
     width: 100%;
 }
 
+/* INTRO */
+.intro-container {
+    max-width: 900px;
+    background: #202020;
+    padding: 40px 50px;
+    margin: 50px auto;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.4s ease;
+}
+
+.intro-container h1 {
+    font-size: 2.3rem;
+    color: #4ca6f5;
+    margin-bottom: 10px;
+}
+
+.intro-container h2 {
+    color: #6fb0ff;
+    margin-top: 25px;
+    font-size: 1.5rem;
+}
+
+.intro-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #cfd9e8;
+    margin-bottom: 25px;
+}
+
+.intro-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.intro-list li {
+    background: #2a4f8d;
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #d3e3ff;
+}
+
+.start-btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: #63aaff;
+    padding: 14px 35px;
+    border-radius: 12px;
+    border: none;
+    color: #000;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 6px 15px rgba(99, 170, 255, 0.5);
+}
+
+.start-btn:hover {
+    background-color: #5cb6ff;
+    transform: translateY(-3px);
+}
+
 /* GAME CARD */
 .animal-game {
     display: flex;
@@ -72,48 +138,12 @@ body {
     position: relative;
 }
 
-/* AGORA SEM O TEXTO – SOMENTE A SETA */
-.curiosity-label {
-    position: absolute;
-    top: 10px;
-    right: 155px;
-    z-index: 11;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    animation: pulse 1.8s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0%   { transform: scale(1); opacity: 1; }
-    50%  { transform: scale(1.15); opacity: 0.9; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.curiosity-label .arrow {
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 10px solid #4fb7fc;
-
-    animation: bounceArrow 1.1s infinite ease-in-out;
-}
-
-@keyframes bounceArrow {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(4px); }
-    100% { transform: translateY(0); }
-}
-
-/* LÂMPADA MAIOR */
+/* LÂMPADA */
 .lamp {
     position: absolute;
     top: 10px;
     right: 20px;
-    width: 120px;  /* ← aumentada */
+    width: 120px;
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -139,7 +169,6 @@ body {
     transform: translateX(-50%);
 }
 
-/* FOTO */
 .animal-box {
     width: 50%;
     padding: 20px;
@@ -151,7 +180,6 @@ body {
     border-radius: 15px;
 }
 
-/* CURIOSIDADE */
 .curiosity-box {
     width: 50%;
     background: #fff;
@@ -178,14 +206,15 @@ input::placeholder {
     font-style: italic;
     opacity: 1;
     letter-spacing: 0.3px;
-    transition: 0.3s ease;
 }
+
 input:focus::placeholder {
     color: #999999;
     transform: translateX(3px);
 }
+
 input[type="text"] {
-    padding: 18px 16px;   /* ← deixa o placeholder mais alto */
+    padding: 18px 16px;
     border-radius: 10px;
     border: none;
     outline: none;
@@ -195,7 +224,6 @@ input[type="text"] {
     width: 250px;
 }
 
-/* BOTÃO */
 .input-area button {
     background-color: #4ca6f5;
     border-radius: 8px;
@@ -212,7 +240,6 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* FOOTER */
 footer {
     background-color: #4ca6f5;
     text-align: center;
@@ -224,6 +251,7 @@ footer {
     left: 0;
     width: 100%;
 }
+
 #game-message {
     opacity: 0;
     transform: translate(-50%, -60%) scale(0.8);
