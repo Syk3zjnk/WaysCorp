@@ -4,7 +4,7 @@ const switcher = document.querySelector('.switcher');
 const keysSection = document.querySelector('.piano__keys');
 
 const playNote = (note) => {
-    const audio = new Audio(`notes/${note}.wav`);
+    const audio = new Audio(`notas/${note}.wav`);
     audio.play();
 }
 
@@ -137,3 +137,4 @@ document.addEventListener('click', function(e) {
     document.querySelectorAll('.navbar-menu-mobile, .menu-backdrop').forEach(e=>e.remove());
   }
 });
+
