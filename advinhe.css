@@ -1,264 +1,479 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background-color: #252525;
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #252525;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== NAVBAR com hambúrguer ===== */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4ca6f5;
-    padding: 15px 40px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4ca6f5;
+  padding: 15px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
 }
 
+/* Botão hambúrguer */
+.navbar-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;     /* aparece só no mobile */
+  padding: 6px;
+}
+
+/* Barras (duas em ::before/::after + uma no span) */
+.navbar-toggle::before,
+.navbar-toggle::after,
+.navbar-toggle span {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s;
+}
+
+.navbar-toggle span {
+  margin: 5px 0;
+}
+
+/* Animação para "X" quando aberto */
+.navbar-toggle.open::before {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar-toggle.open::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.navbar-toggle.open span {
+  opacity: 0;
+}
+
+/* Links desktop */
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-    position: relative;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 400;
-    padding-bottom: 5px;
-    transition: color 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    left: 0;
-    bottom: 0;
-    background-color: #cce6ff;
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #cce6ff;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #cce6ff;
+  color: #cce6ff;
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
-/* INTRO */
+/* ===== INTRO ===== */
 .intro-container {
-    max-width: 900px;
-    background: #202020;
-    padding: 40px 50px;
-    margin: 50px auto;
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    animation: fadeIn 0.4s ease;
+  max-width: 900px;
+  background: #202020;
+  padding: 40px 50px;
+  margin: 50px auto;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.4s ease;
+  flex: 1 0 auto;
 }
 
 .intro-container h1 {
-    font-size: 2.3rem;
-    color: #4ca6f5;
-    margin-bottom: 10px;
+  font-size: 2.3rem;
+  color: #4ca6f5;
+  margin-bottom: 10px;
 }
 
 .intro-container h2 {
-    color: #6fb0ff;
-    margin-top: 25px;
-    font-size: 1.5rem;
+  color: #6fb0ff;
+  margin-top: 25px;
+  font-size: 1.5rem;
 }
 
 .intro-text {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #cfd9e8;
-    margin-bottom: 25px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #cfd9e8;
+  margin-bottom: 25px;
 }
 
 .intro-list {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
 }
 
 .intro-list li {
-    background: #2a4f8d;
-    padding: 12px 15px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    color: #d3e3ff;
+  background: #2a4f8d;
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #d3e3ff;
 }
 
 .start-btn {
-    display: inline-block;
-    margin-top: 25px;
-    background: #63aaff;
-    padding: 14px 35px;
-    border-radius: 12px;
-    border: none;
-    color: #000;
-    font-size: 1.15rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.25s ease;
-    box-shadow: 0 6px 15px rgba(99, 170, 255, 0.5);
+  display: inline-block;
+  margin-top: 25px;
+  background: #63aaff;
+  padding: 14px 35px;
+  border-radius: 12px;
+  border: none;
+  color: #000;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 15px rgba(99, 170, 255, 0.5);
 }
 
 .start-btn:hover {
-    background-color: #5cb6ff;
-    transform: translateY(-3px);
+  background-color: #5cb6ff;
+  transform: translateY(-3px);
 }
 
-/* GAME CARD */
+/* ===== GAME CARD ===== */
 .animal-game {
-    display: flex;
-    justify-content: center;
-    padding: 40px 0;
+  display: none;               /* começa escondido */
+  justify-content: center;
+  padding: 30px 0 40px 0;
+  flex: 1 0 auto;              /* ocupa o espaço entre header e footer */
 }
 
 .game-card {
-    background-color: #333;
-    width: 95%;
-    max-width: 1100px;
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    position: relative;
+  background-color: #333;
+  width: 95%;
+  max-width: 1100px;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  position: relative;
 }
 
 /* LÂMPADA */
 .lamp {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    width: 120px;
-    cursor: pointer;
-    transition: 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 80px;
+  max-width: 22vw;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .lamp:hover {
-    filter: drop-shadow(0 0 12px #4fb7fc);
-    transform: scale(1.07);
+  filter: drop-shadow(0 0 12px #4fb7fc);
+  transform: scale(1.07);
+}
+
+/* TÍTULO DO JOGO */
+.game-title {
+  color: #ffffff;
+  margin: 20px 0;
 }
 
 /* SLIDE */
 .slide-wrapper {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .slide-area {
-    display: flex;
-    width: 200%;
-    transition: transform .6s ease;
+  display: flex;
+  width: 200%;
+  transition: transform .6s ease;
 }
 
 .slide-area.open {
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .animal-box {
-    width: 50%;
-    padding: 20px;
-    text-align: center;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
 }
 
 .animal-img {
-    width: 70%;
-    border-radius: 15px;
+  width: 70%;
+  max-width: 320px;
+  border-radius: 15px;
 }
 
+/* CURIOSIDADE */
 .curiosity-box {
-    width: 50%;
-    background: #fff;
-    padding: 25px;
-    border-radius: 25px;
-    margin: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: .4s ease;
+  width: 50%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 25px;
+  margin: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .4s ease;
 }
 
 .curiosity-box.open {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .curiosity-title {
-    color: #4fb7fc;
-    font-size: 2rem;
+  color: #4fb7fc;
+  font-size: 2rem;
+}
+
+/* INPUT + BOTÃO */
+.input-area {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 input::placeholder {
-    color: #cccccc;
-    font-style: italic;
-    opacity: 1;
-    letter-spacing: 0.3px;
+  color: #cccccc;
+  font-style: italic;
+  opacity: 1;
+  letter-spacing: 0.3px;
 }
 
 input:focus::placeholder {
-    color: #999999;
-    transform: translateX(3px);
+  color: #999999;
+  transform: translateX(3px);
 }
 
 input[type="text"] {
-    padding: 18px 16px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    background-color: #2e2e2e;
-    color: #fff;
-    width: 250px;
+  padding: 18px 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #2e2e2e;
+  color: #fff;
+  width: 250px;
+  max-width: 100%;
 }
 
 .input-area button {
-    background-color: #4ca6f5;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    padding: 12px 24px;
-    color: #fff;
-    font-size: 16px;
+  background-color: #4ca6f5;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 12px 24px;
+  color: #fff;
+  font-size: 16px;
+  white-space: nowrap;
 }
 
 button:hover {
-    background-color: #4fb7fc;
-    transform: translateY(-2px);
+  background-color: #4fb7fc;
+  transform: translateY(-2px);
 }
 
+#result {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* FOOTER (não fixo para não cobrir conteúdo) */
 footer {
-    background-color: #4ca6f5;
-    text-align: center;
-    padding: 15px 0;
-    color: #ffffff;
-    font-size: 0.9rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+  background-color: #4ca6f5;
+  text-align: center;
+  padding: 15px 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-top: auto;          /* empurrado para baixo pelo flex do body */
 }
 
+/* Mensagem final do jogo */
 #game-message {
-    opacity: 0;
-    transform: translate(-50%, -60%) scale(0.8);
-    transition: all 0.6s ease;
+  opacity: 0;
+  transform: translate(-50%, -60%) scale(0.8);
+  transition: all 0.6s ease;
 }
 
 #game-message.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ===== ANIMAÇÃO INTRO ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translateY(0);
+  }
+}
+
+/* --- Mobile: até 500px (em pé e deitado) --- */
+@media (max-width: 500px), (max-height: 500px) and (orientation: landscape) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .intro-container {
+    margin: 25px 10px;
+    padding: 25px 18px;
+  }
+
+  /* botão "Começar o Jogo" longe do footer */
+  .start-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .animal-game {
+    padding: 20px 0 30px 0;
+  }
+
+  /* input + botão em coluna para não cortar a largura */
+  .input-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .input-area button {
+    width: 100%;
+  }
+
+  .slide-area {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .slide-area.open {
+    transform: translateX(0);
+  }
+
+  .animal-box,
+  .curiosity-box {
+    width: 100%;
+  }
+
+  .curiosity-box {
+    margin: 10px 0 0 0;
+  }
+
+  /* Menu drawer lateral */
+  .navbar-menu-mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    max-width: 320px;
+    height: 100%;
+    background: #26354863;
+    box-shadow: -4px 0 22px #121a3260;
+    border-radius: 26px 0 0 26px;
+    z-index: 99;
+    align-items: center;
+    justify-content: center;
+    animation: menuSlideInRight .33s cubic-bezier(.71,1.56,.43,.9);
+  }
+
+  .navbar-menu-mobile li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.3em 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-menu-mobile a {
+    display: inline-block;
+    font-size: 1.15em;
+    font-weight: 500;
+    color: #e0e6ed;
+    text-decoration: none;
+    letter-spacing: .07em;
+    text-align: center;
+    max-width: 80%;
+    white-space: normal;
+    word-break: break-word;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .navbar-menu-mobile a:hover {
+    background: #313e53c2;
+    color: #498496;
+  }
+
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 98;
+    animation: fadeIn .3s;
+  }
+
+  @keyframes menuSlideInRight {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+  }
 }
