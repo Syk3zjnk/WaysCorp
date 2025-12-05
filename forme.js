@@ -1,35 +1,35 @@
 const words = [
   { word: "banana", img: "ImgJogo/banana.jpg" },
-  { word: "gato", img: "ImgJogo/gato.png" },
-  { word: "peixe", img: "ImgJogo/peixe.jpg" },
-  { word: "foca", img: "ImgJogo/foca.jpg" },
-  { word: "bola", img: "ImgJogo/bola.jpg" },
-  { word: "nuvem", img: "ImgJogo/nuvem1.jpg" },
-  { word: "leao", img: "ImgJogo/leao.jpg" },
-  { word: "sol", img: "ImgJogo/sol.jpg" },
-  { word: "uva", img: "ImgJogo/uva.jpg" },
-  { word: "pato", img: "ImgJogo/pato.jpg" },
-  { word: "flor", img: "ImgJogo/flor.jpg" },
-  { word: "casa", img: "ImgJogo/casa.jpg" },
-  { word: "lobo", img: "ImgJogo/lobo.jpg" },
-  { word: "vaca", img: "ImgJogo/vaca.jpg" },
-  { word: "rato", img: "ImgJogo/rato.jpg" },
-  { word: "coco", img: "ImgJogo/coco.jpg" },
-  { word: "panda", img: "ImgJogo/panda.jpg" },
-  { word: "sapo", img: "ImgJogo/sapo.jpg" },
-  { word: "mel", img: "ImgJogo/mel.jpg" }, // corrigido
-  { word: "cubo", img: "ImgJogo/cubo.jpg" }
+  { word: "gato",   img: "ImgJogo/gato.png" },
+  { word: "peixe",  img: "ImgJogo/peixe.jpg" },
+  { word: "foca",   img: "ImgJogo/foca.jpg" },
+  { word: "bola",   img: "ImgJogo/bola.jpg" },
+  { word: "nuvem",  img: "ImgJogo/nuvem1.jpg" },
+  { word: "leao",   img: "ImgJogo/leao.jpg" },
+  { word: "sol",    img: "ImgJogo/sol.jpg" },
+  { word: "uva",    img: "ImgJogo/uva.jpg" },
+  { word: "pato",   img: "ImgJogo/pato.jpg" },
+  { word: "flor",   img: "ImgJogo/flor.jpg" },
+  { word: "casa",   img: "ImgJogo/casa.jpg" },
+  { word: "lobo",   img: "ImgJogo/lobo.jpg" },
+  { word: "vaca",   img: "ImgJogo/vaca.jpg" },
+  { word: "rato",   img: "ImgJogo/rato.jpg" },
+  { word: "coco",   img: "ImgJogo/coco.jpg" },
+  { word: "panda",  img: "ImgJogo/panda.jpg" },
+  { word: "sapo",   img: "ImgJogo/sapo.jpg" },
+  { word: "mel",    img: "ImgJogo/mel.jpg" },
+  { word: "cubo",   img: "ImgJogo/cubo.jpg" }
 ];
 
 let currentIndex = 0;
 let selectedWord = "";
 let formedWord = "";
 
-const wordImage = document.getElementById("word-image");
+const wordImage          = document.getElementById("word-image");
 const scrambledContainer = document.getElementById("scrambled");
-const answerContainer = document.getElementById("answer");
-const message = document.getElementById("message");
-const nextBtn = document.getElementById("next-btn");
+const answerContainer    = document.getElementById("answer");
+const message            = document.getElementById("message");
+const nextBtn            = document.getElementById("next-btn");
 
 /* ===== FUNÇÃO DE EMBARALHAR ===== */
 function shuffle(word) {
@@ -92,10 +92,10 @@ function checkWord() {
     void message.offsetWidth;
     message.classList.add("success");
 
+    // revela letras restantes (para próxima rodada)
     scrambledContainer.querySelectorAll("span").forEach((s) => {
       s.classList.remove("hidden");
     });
-
   } else {
     message.textContent = "😵 Ops! Tente novamente!";
     message.className = "";
@@ -124,8 +124,8 @@ nextBtn.addEventListener("click", () => {
 
 /* ===== TELA INICIAL E INICIAR JOGO ===== */
 const introContainer = document.getElementById("intro-container");
-const gameSection = document.querySelector(".game-section");
-const startBtn = document.getElementById("start-btn");
+const gameSection    = document.querySelector(".game-section");
+const startBtn       = document.getElementById("start-btn");
 
 // esconder jogo no começo
 gameSection.style.display = "none";
@@ -135,3 +135,43 @@ startBtn.addEventListener("click", () => {
   gameSection.style.display = "flex";
   loadWord();
 });
+
+/* ===== MENU HAMBÚRGUER LATERAL ===== */
+const toggle   = document.querySelector('.navbar-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (toggle && navLinks) {
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+
+    // remove menus/backdrops antigos
+    document.querySelectorAll('.navbar-menu-mobile, .menu-backdrop')
+      .forEach(e => e.remove());
+
+    // se abriu, cria menu + backdrop
+    if (toggle.classList.contains('open')) {
+      const menu = document.createElement('ul');
+      menu.className = 'navbar-menu-mobile';
+      menu.innerHTML = navLinks.innerHTML;
+      document.body.appendChild(menu);
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'menu-backdrop';
+      backdrop.onclick = () => {
+        menu.remove();
+        backdrop.remove();
+        toggle.classList.remove('open');
+      };
+      document.body.appendChild(backdrop);
+
+      // fecha ao clicar em link
+      menu.querySelectorAll('a').forEach(link => {
+        link.onclick = () => {
+          menu.remove();
+          backdrop.remove();
+          toggle.classList.remove('open');
+        };
+      });
+    }
+  });
+}
