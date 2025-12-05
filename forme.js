@@ -17,7 +17,7 @@ const words = [
   { word: "coco",   img: "ImgJogo/coco.jpg" },
   { word: "panda",  img: "ImgJogo/panda.jpg" },
   { word: "sapo",   img: "ImgJogo/sapo.jpg" },
-  { word: "mel",    img: "ImgJogo/mel.jpg" },
+  { word: "mel",    img: "mel.jfif.jpg" },
   { word: "cubo",   img: "ImgJogo/cubo.jpg" }
 ];
 
