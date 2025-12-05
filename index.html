@@ -35,19 +35,20 @@
     </section>
 
     <!-- TÍTULO DO GRÁFICO -->
-    <h2 style="text-align:center; margin-top: 40px;">
-        Acompanhe o gráfico do monitor em tempo real:
-    </h2>
-
     <!-- GRÁFICO THINGSPEAK -->
-    <div style="display: flex; justify-content: center; margin-bottom: 40px;">
-        <iframe 
-            width="450" 
-            height="260" 
-            style="border: 1px solid #cccccc;" 
-            src="https://thingspeak.com/channels/2738180/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=40&title=Monitorador+sonoro&type=line">
-        </iframe>
-    </div>
+<h2 style="text-align:center; margin-top: 40px;">
+  Acompanhe o gráfico do monitor em tempo real:
+</h2>
+
+<div class="grafico-container">
+  <div class="grafico-wrapper">
+    <iframe
+      class="grafico-iframe"
+      src="https://thingspeak.com/channels/2738180/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=40&title=Monitorador+sonoro&type=line">
+    </iframe>
+  </div>
+</div>
+
 
     <footer>
         <p>© 2025 Ways Corp. Todos os direitos reservados.</p>
