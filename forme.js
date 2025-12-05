@@ -4,7 +4,7 @@ const words = [
   { word: "peixe",  img: "ImgJogo/peixe.jpg" },
   { word: "foca",   img: "ImgJogo/foca.jpg" },
   { word: "bola",   img: "ImgJogo/bola.jpg" },
-  { word: "nuvem",  img: "ImgJogo/nuvem1.jpg" },
+  { word: "nuvem",  img: "nuvem.png" },
   { word: "leao",   img: "ImgJogo/leao.jpg" },
   { word: "sol",    img: "ImgJogo/sol.jpg" },
   { word: "uva",    img: "ImgJogo/uva.jpg" },
