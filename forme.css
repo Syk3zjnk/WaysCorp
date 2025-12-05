@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 /* ===== GERAL ===== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -10,10 +16,10 @@ body {
   flex-direction: column;
 }
 
-/* ===== NAVBAR ===== (MANTIDA ORIGINAL) */
+/* ===== NAVBAR com hambúrguer ===== */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;   /* logo esquerda, hambúrguer/direita */
   align-items: center;
   background-color: #4ca6f5;
   padding: 20px 50px;
@@ -29,10 +35,50 @@ body {
   color: #ffffff;
 }
 
+/* Botão hambúrguer */
+.navbar-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;         /* aparece só no mobile */
+  padding: 6px;
+}
+
+/* Barras (duas em ::before/::after + uma no span) */
+.navbar-toggle::before,
+.navbar-toggle::after,
+.navbar-toggle span {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s;
+}
+
+.navbar-toggle span {
+  margin: 5px 0;
+}
+
+/* Animação para "X" quando aberto */
+.navbar-toggle.open::before {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar-toggle.open::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.navbar-toggle.open span {
+  opacity: 0;
+}
+
+/* Links desktop */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 35px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -65,34 +111,103 @@ body {
   width: 100%;
 }
 
-/* ===== SEÇÃO DO JOGO ===== */
-.game-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
+/* ===== INTRO (EXPLICAÇÃO DO JOGO) ===== */
+.intro-container {
+  max-width: 900px;
+  background: #202020;
+  padding: 40px 50px;
+  margin: 40px auto;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.4s ease;
+  flex: 1 0 auto;
 }
 
-/* ===== CONTAINER DO JOGO (SEM NEON) ===== */
+.intro-container h1 {
+  font-size: 2.3rem;
+  color: #4ca6f5;
+  margin-bottom: 10px;
+}
+
+.intro-container h2 {
+  color: #6fb0ff;
+  margin-top: 25px;
+  font-size: 1.5rem;
+}
+
+.intro-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #cfd9e8;
+  margin-bottom: 25px;
+}
+
+.intro-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.intro-list li {
+  background: #2a4f8d;
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #d3e3ff;
+}
+
+/* botão iniciar */
+.start-btn {
+  display: inline-block;
+  margin-top: 25px;
+  background: #63aaff;
+  padding: 14px 35px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 15px rgba(99, 170, 255, 0.5);
+}
+
+.start-btn:hover {
+  background-color: #5cb6ff;
+  transform: translateY(-3px);
+}
+
+/* ===== SEÇÃO DO JOGO ===== */
+.game-section {
+  flex: 1 0 auto;
+  display: none;            /* começa escondido */
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 30px 20px;
+}
+
+/* CONTAINER DO JOGO */
 .game-container {
   background-color: #202020;
   border-radius: 25px;
   box-shadow: none;
-  padding: 45px;
+  padding: 30px 30px 35px 30px;
   max-width: 900px;
-  width: 92%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 40px;
   text-align: center;
-  transition: 0.3s ease;
 }
 
 /* imagem */
 .image-container img {
   width: 240px;
   height: 240px;
+  max-width: 40vw;
   object-fit: contain;
   border-radius: 18px;
   background-color: #2b2b2b;
@@ -108,22 +223,26 @@ body {
   min-width: 260px;
 }
 
+#instruction {
+  margin-bottom: 10px;
+}
+
 /* letras embaralhadas */
 .scrambled {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin: 25px 0;
+  gap: 10px;
+  margin: 20px 0;
   flex-wrap: wrap;
 }
 
 .scrambled span {
   background-color: #4ca6f5;
   color: #fff;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-weight: 600;
   border-radius: 12px;
-  padding: 12px 18px;
+  padding: 10px 15px;
   cursor: pointer;
   transition: opacity 0.15s ease-in, transform 0.15s ease-in;
 }
@@ -141,14 +260,15 @@ body {
 
 /* RESPOSTA */
 .answer {
-  min-height: 70px;
+  min-height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   font-weight: 600;
   color: #e0e0e0;
-  gap: 12px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .answer span {
@@ -161,19 +281,18 @@ body {
   color: #4ca6f5;
 }
 
-/* ===== BOTÕES (CENTRALIZADOS) ===== */
+/* BOTÃO PRÓXIMO */
 button {
   background-color: #4ca6f5;
   color: #fff;
   border: none;
-  padding: 14px 32px;
+  padding: 12px 30px;
   border-radius: 12px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   cursor: pointer;
   transition: 0.25s ease;
-  margin: 20px auto; /* CENTRALIZA */
-  display: block; /* CENTRALIZA */
+  display: block;
 }
 
 button:hover {
@@ -181,14 +300,14 @@ button:hover {
   transform: translateY(-3px);
 }
 
-/* ===== MENSAGENS ===== */
+/* MENSAGENS */
 #message {
-  font-size: 1.4rem;
-  margin-top: 20px;
+  font-size: 1.3rem;
+  margin-top: 15px;
   font-weight: 700;
   display: inline-block;
   position: relative;
-  padding: 12px 28px;
+  padding: 10px 24px;
   border-radius: 18px;
   background: none;
   color: #e0e0e0;
@@ -225,78 +344,10 @@ button:hover {
   100% { transform: translateX(0); }
 }
 
-/* ===== INTRO (EXPLICAÇÃO DO JOGO) ===== */
-.intro-container {
-  max-width: 900px;
-  background: #202020; /* fundo escuro do container */
-  padding: 40px 50px;
-  margin: 50px auto;
-  border-radius: 25px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  animation: fadeIn 0.4s ease;
-}
-
-.intro-container h1 {
-  font-size: 2.3rem;
-  color: #4ca6f5; /* azul vibrante */
-  margin-bottom: 10px;
-}
-
-.intro-container h2 {
-  color: #6fb0ff;
-  margin-top: 25px;
-  font-size: 1.5rem;
-}
-
-.intro-text {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #cfd9e8; /* texto claro */
-  margin-bottom: 25px;
-}
-
-.intro-list {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-}
-
-.intro-list li {
-  background: #2a4f8d; /* azul escuro das listas */
-  padding: 12px 15px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  color: #d3e3ff;
-}
-
-/* botão iniciar */
-.start-btn {
-  display: inline-block;
-    margin-top: 25px;
-    background: #63aaff;
-    padding: 14px 35px;
-    border-radius: 12px;
-    text-decoration: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.15rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.25s ease;
-    box-shadow: 0 6px 15px rgba(99, 170, 255, 0.5);
- 
-}
-
-.start-btn:hover {
-  background-color: #5cb6ff;
-  transform: translateY(-3px);
-}
 /* animação */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* footer */
@@ -307,4 +358,124 @@ footer {
   color: #eeeeee;
   font-size: 0.95rem;
   margin-top: auto;
+}
+
+/* ===== MOBILE: até 500px (em pé ou deitado) ===== */
+@media (max-width: 500px), (max-height: 500px) and (orientation: landscape) {
+  .navbar {
+    padding: 12px 16px;
+    justify-content: space-between;  /* garante logo esquerda / hambúrguer direita */
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+    margin-left: auto;              /* empurra o botão para o canto direito */
+  }
+
+  .intro-container {
+    margin: 25px 10px;
+    padding: 25px 16px;
+  }
+
+  .game-section {
+    padding: 20px 10px 25px 10px;
+  }
+
+  .game-container {
+    flex-direction: column;
+    padding: 20px 16px 24px 16px;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .image-container img {
+    width: 75vw;
+    height: auto;
+  }
+
+  .game-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .scrambled span {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
+
+  .answer {
+    font-size: 1.7rem;
+  }
+
+  button {
+    max-width: 320px;
+  }
+
+  /* Menu drawer lateral */
+  .navbar-menu-mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    max-width: 320px;
+    height: 100%;
+    background: #26354863;
+    box-shadow: -4px 0 22px #121a3260;
+    border-radius: 26px 0 0 26px;
+    z-index: 99;
+    align-items: center;
+    justify-content: center;
+    animation: menuSlideInRight .33s cubic-bezier(.71,1.56,.43,.9);
+  }
+
+  .navbar-menu-mobile li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.3em 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-menu-mobile a {
+    display: inline-block;
+    font-size: 1.05em;
+    font-weight: 500;
+    color: #e0e6ed;
+    text-decoration: none;
+    letter-spacing: .07em;
+    text-align: center;
+    max-width: 80%;
+    white-space: normal;
+    word-break: break-word;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .navbar-menu-mobile a:hover {
+    background: #313e53c2;
+    color: #498496;
+  }
+
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 98;
+    animation: fadeIn .3s;
+  }
+
+  @keyframes menuSlideInRight {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+  }
 }
